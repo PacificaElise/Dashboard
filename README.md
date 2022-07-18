@@ -15,7 +15,7 @@
 |   |   |       └── index.html
 |   └── scss
 |       ├── base
-|       |   ├── \_base.scss
+|       |   ├── _base.scss
 |       |   ├── fonts.scss
 |       |   ├── mixins.scss
 |       |   ├── reset.scss

@@ -11,6 +11,12 @@
 |   |   ├── services
 |   |   |   └── api
 |   |   |       └── index.html
+|   |   ├── components
+|   |   |   └── datepickers
+|   |   |       └── index.js
+|   |   └── helpers
+|   |       └── myFunc
+|   |           └── index.js
 |   └── scss
 |       ├── base
 |       |   ├── _base.scss

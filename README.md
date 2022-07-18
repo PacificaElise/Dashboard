@@ -16,10 +16,10 @@
 |   └── scss
 |       ├── base
 |       |   ├── _base.scss
-|       |   ├── fonts.scss
-|       |   ├── mixins.scss
-|       |   ├── reset.scss
-|       |   └── vars.scss
+|       |   ├── _fonts.scss
+|       |   ├── _mixins.scss
+|       |   ├── _reset.scss
+|       |   └── _vars.scss
 |       ├── blocks
 |       └── main.scss
 ├── .gitignore

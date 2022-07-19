@@ -1,0 +1,10 @@
+@mixin button {
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 4px;
+    background-color: $button-color;
+}
+
+@mixin selector {
+    //стили для селектора
+}

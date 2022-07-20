@@ -20,6 +20,9 @@ h2 {
 
 button {
     @include button;
+    cursor: pointer;
+    min-height: 30px;
+    min-width: 120px;
 }
 
 textarea {
@@ -30,7 +33,24 @@ textarea {
     margin-bottom: 38px;
 }
 
+.tags_dates {
+    color: $text-color;
+    font-size: $tag-date-event;
+    display: flex;
+    justify-content: space-between;
+    min-width: 384px;
+}
+
 .new-event_part-bottom {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+}
+
+select {
+    min-width: 180px;
+    min-height: 30px;
+    border: 1px solid #DFE1E5;
+    border-radius: 4px;
+    margin-top: 8px;
 }

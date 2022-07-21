@@ -1,0 +1,26 @@
+.details {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.details_description {
+    width: -webkit-fill-available;
+    border: 1px solid #DFE1E5;
+}
+
+.details_time {
+    width: 50px;
+}
+
+.details_label {
+    width: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #7BAFFC;
+    border-radius: 50%;
+    display: inline-block;
+}

@@ -1,5 +1,5 @@
 class ApiService {
-    static send(params) {
+    async send(params) {
         const {method = 'GET', data, url} = params,
         host = 'dashboard.ri-nelly.ru/api';
 
@@ -19,7 +19,7 @@ class ApiService {
         let requestData;
 
         //отправляем данные на сервер
-        if(method === 'POST'){
+        if(method !== 'GET'){
             requestData = JSON.stringify(data)
         }
 

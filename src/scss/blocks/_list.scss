@@ -1,18 +1,28 @@
+.plans{
+    background:$base-light;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 4px;
+}
+.business-today_list{
+    padding: 20px;
+    border: 3px solid $base-middle;
+}
 .details {
     display: flex;
     align-items: center;
     padding: 15px;
 }
-
+.details_time{
+    margin-right: 20px;
+}
 .details_description {
     width: -webkit-fill-available;
-    border: 1px solid #DFE1E5;
+    border: 1px solid $base-dark;
 }
-
-.details_time {
-    width: 50px;
+.det-text-opacity{
+    opacity: 0.5;
 }
-
 .dot {
     height: 15px;
     width: 15px;
@@ -20,6 +30,10 @@
     display: inline-block;   
 }
 .dot-color{
-    background-color: #7BAFFC;
+    background-color: $tag-blue;
     margin-right: 20px;
 }
+.layer {
+    overflow: auto; 
+    height: 493px;
+} 

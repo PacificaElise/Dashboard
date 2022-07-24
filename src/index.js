@@ -10,8 +10,8 @@ window.addEventListener('DOMContentLoaded', () => {
     //Запускаем наш собственный модуль с нашими датапикерами
     //datepickers();
     labels();
-    //Забрать название и цвет выбранной метки
-    document.querySelector('button').addEventListener('click', () => console.log(document.querySelector('.select__input').dataset.color, document.querySelector('.select__input').dataset.title));
+    //Забрать id метки
+    document.querySelector('button').addEventListener('click', () => console.log(document.querySelector('.select__input').dataset.value));
     // Все импортированные скрипты применять здесь
 });
 

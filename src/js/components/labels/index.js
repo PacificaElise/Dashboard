@@ -18,7 +18,7 @@ const getTemplate = (data = [], placeholder, selectedID) => {
 
     return `
         <div class="select__backdrop" data-type="backdrop"></div>
-        <div class="select__input" data-type="input" data-color="${color}" data-title="${text}">
+        <div class="select__input" data-type="input" data-value="${selectedID}">
             <span class="select__color" data-type="color" style="background-color:${color}"></span>
             <span class="select__title" data-type="title">${text}</span>
             <i class="fa fa-chevron-down" style="color: #DFE1E5" data-type="arrow"></i>
@@ -79,8 +79,7 @@ class Select {
         this.selectedID = id;
         this.title.textContent = this.current.title;
         this.color.style.backgroundColor = this.current.color;
-        this.el.querySelector('.select__input').setAttribute('data-color', this.current.color);
-        this.el.querySelector('.select__input').setAttribute('data-title', this.current.title);
+        this.el.querySelector('.select__input').setAttribute('data-value', this.selectedID);
         this.el.querySelectorAll(`[data-type="item"]`).forEach(el => {
             el.classList.remove('selected')
         });

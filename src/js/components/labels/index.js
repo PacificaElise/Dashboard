@@ -18,7 +18,7 @@ const getTemplate = (data = [], placeholder, selectedID) => {
 
     return `
         <div class="select__backdrop" data-type="backdrop"></div>
-        <div class="select__input" data-type="input">
+        <div class="select__input" data-type="input" data-color="${color}" data-title="${text}">
             <span class="select__color" data-type="color" style="background-color:${color}"></span>
             <span data-type="title">${text}</span>
             <i class="fa fa-chevron-down" style="color: #DFE1E5" data-type="arrow"></i>
@@ -122,7 +122,8 @@ const select = new Select('#select', {
         {id:'5', color: '#FD4B33', title: 'Важное'}
     ],
     onSelect(item) {
-        console.log(item)
+        console.log(item);
+        //console.log(document.querySelector('.select__input').dataset.color, document.querySelector('.select__input').dataset.title);
     }
 });
 }

@@ -26,19 +26,24 @@
                             <select name="" id=""></select>
                         </div>
                         <div>
-                            <h3>Дата</h3>
-                            <!--Инпут для данных времени его нужно кастомизировать через scss -->
+                            <h3 class="nameDatepicker">Дата</h3>
                             <input type="text" class="timeDatepicker__input">
-                            <!--Сам датапикер -->
                             <div class="timeDatepicker"></div>
                         </div>
                     </div>
                     <button class="button">Сохранить</button>
                 </div>
             </div>
-            <div class="plans"></div>
+            <div class="plans">
+                <div>
+                    Планы на: 
+                    <input type="text" class="theDatepicker__input">
+                    <div class="theDatepicker"></div>
+                </div>
+            </div>
         </div>
     </div>
+    <script src="../index.js"></script>
 </body>
 
 </html>

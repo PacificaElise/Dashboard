@@ -1,11 +1,8 @@
 .wrapp {
-    width: 180px;
-    opacity: none;
     min-width: 180px;
     margin-top: 8px;
 }
 
-$height: 28px;
 .select {
     width: 100%;
     position: relative;
@@ -25,12 +22,10 @@ $height: 28px;
     }
 
     &__input {
-        height: $height;
         min-height: $select-height;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border: 1px solid $base-middle;
         border: 1px solid $base-dark;
         border-radius: 4px;
         color: $text-color;
@@ -44,12 +39,10 @@ $height: 28px;
         max-height: 100px;
         display: none;
         position: absolute;
-        border: 1px solid $base-middle;
         border: 1px solid $base-dark;
         border-radius: 4px;
         font-size: $tag-date-event;
         color: $text-color;
-        top: $height;
         top: $select-height;
         left: 0;
         right: 0;

@@ -1,5 +1,5 @@
 class ApiService {
-    async send(params) {
+    static async send(params) {
         const {method = 'GET', data, url} = params,
         host = 'dashboard.ri-nelly.ru/api';
 

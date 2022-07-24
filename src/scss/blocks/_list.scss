@@ -20,6 +20,10 @@
     width: -webkit-fill-available;
     border: 1px solid $base-dark;
 }
+.details-label-string{
+    display: flex;
+    flex-grow: 1;
+}
 .det-text-opacity{
     opacity: 0.5;
 }

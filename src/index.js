@@ -2,7 +2,7 @@ import './scss/main.scss';
 //Подключаем наш модуль с функцией которая запускает наши датапикеры
 //import { datepickers } from './js/components/datepickers';
 //Импортируем стили из node_modules Для наших датапикеров
-import 'simplepicker/dist/simplepicker.css';
+//import 'simplepicker/dist/simplepicker.css';
 import { labels } from './js/components/labels';
 
 

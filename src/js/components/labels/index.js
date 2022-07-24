@@ -22,6 +22,7 @@ const getTemplate = (data = [], placeholder, selectedID) => {
             <span class="select__color" data-type="color" style="background-color:${color}"></span>
             <span data-type="title">${text}</span>
             <i class="fa fa-chevron-down" style="color: #f1f2f6" data-type="arrow"></i>
+            <i class="fa fa-chevron-down" style="color: #DFE1E5" data-type="arrow"></i>
         </div>
         <div class="select__dropdown">
             <ul class="select__list">

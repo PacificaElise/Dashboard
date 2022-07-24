@@ -1,10 +1,11 @@
 .wrapp {
     width: 180px;
     opacity: none;
+    min-width: 180px;
+    margin-top: 8px;
 }
 
 $height: 28px;
-
 .select {
     width: 100%;
     position: relative;
@@ -25,10 +26,13 @@ $height: 28px;
 
     &__input {
         height: $height;
+        min-height: $select-height;
         display: flex;
         align-items: center;
         justify-content: space-between;
         border: 1px solid $base-middle;
+        border: 1px solid $base-dark;
+        border-radius: 4px;
         color: $text-color;
         font-size: $tag-date-event;
         padding: 0 1rem;
@@ -41,16 +45,21 @@ $height: 28px;
         display: none;
         position: absolute;
         border: 1px solid $base-middle;
+        border: 1px solid $base-dark;
+        border-radius: 4px;
         font-size: $tag-date-event;
         color: $text-color;
         top: $height;
+        top: $select-height;
         left: 0;
         right: 0;
         overflow: auto;
         box-shadow: 2px 3px 5px rgba(0,0,0,.3);
+
     }
 
     &__list {
+        background-color: $base-light;
         padding: 0;
         margin: 0;
     }

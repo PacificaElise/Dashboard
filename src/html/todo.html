@@ -1,50 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="container">
-      <div class="nav">
-        <!-- ... -->
-      </div>
-      <div class="wrapper">
-        <div class="new-event">
-          <h2>Новое событие</h2>
-          <textarea name="" id=""></textarea>
-          <div class="new-event_part-bottom">
-            <div class="tags_dates">
-              <div>
-                <h3>Метки</h3>
-                <div class="wrapp">
-                  <div id="select"></div>
+        <div class="nav">
+            <!-- ... -->
+        </div>
+        <div class="wrapper">
+            <div class="new-event">
+                <h2>Новое событие</h2>
+                <textarea name="" id=""></textarea>
+                <div class="new-event_part-bottom">
+                    <div class="tags_dates">
+                        <div>
+                            <h3>Метки</h3>
+                            <div class="wrapp">
+                                <div id="select"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="nameDatepicker">Дата</h3>
+			                <input type="text" class="timeDatepicker__input">
+			                <div class="timeDatepicker"></div>	
+                        </div>
+                    </div>
+                    <button class="button">Сохранить</button>
                 </div>
-              </div>
-              <div>
-                <h3 class="nameDatepicker">Дата</h3>
-                <input type="text" class="timeDatepicker__input">
-                            <div class="timeDatepicker"></div>
-              </div>
             </div>
             <div class="plans">
-             <div>
-                    Планы на: 
-                    <input type="text" class="theDatepicker__input">
-                    <div class="theDatepicker"></div>
+                <div class="business-today">
+                    <div class="business-today_select-date">
+                        <div>
+                            <span>Планы на:</span>
+                            <input type="text" class="theDatepicker__input">
+                            <div class="theDatepicker"></div>
+                        </div>
+                    </div>
+                    <div class="business-today_list layer">
+                        <div class="details">
+                            <label class="details_time det-text-opacity">8:00</label>
+                            <div class="details-label-string">
+                                <span class="dot dot-color"></span>
+                                <p class="det-text-opacity">Nemo enim ipsam voluptatem quia voluptas
+                                    sit.</p>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">8:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">9:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">9:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">10:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit
+                                    voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                                    quae ab
+                                    illo
+                                    inventore...</p>
+                            </div>
+                            <div class="pic-close">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                            d="M1.78125 17.5312L0.46875 16.2187L7.6875 9L0.46875 1.78125L1.78125 0.46875L9 7.6875L16.2187 0.46875L17.5312 1.78125L10.3125 9L17.5312 16.2187L16.2187 17.5312L9 10.3125L1.78125 17.5312Z"
+                                            fill="#FD4B33" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">10:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">11:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">11:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">12:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">12:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">13:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">13:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">14:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">14:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">15:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">15:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">16:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">16:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">17:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">17:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">18:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">18:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">19:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">19:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">20:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">20:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">21:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">21:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">22:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">22:30</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                        <div class="details">
+                            <label class="details_time">23:00</label>
+                            <div class="details-label-string">
+                                <span></span>
+                                <div class="details_description"></div>
+                            </div>
+                            <div class="pic-close"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="button">Сохранить</button>
-          </div>
         </div>
-        <div class="plans"></div>
-      </div>
     </div>
-  </body>
+</body>
+
 </html>

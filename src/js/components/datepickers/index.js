@@ -1,32 +1,30 @@
-import SimplePicker from "simplepicker"; 
+import SimplePicker from "simplepicker";
 
-function datepickers() {
-    const timeDatepickerInput = document.querySelector('.timeDatepicker__input'),
-        theDatepickerInput = document.querySelector('.theDatepicker__input');
+class Datepicker {
+    constructor(props) {
+        const { el, input, options, onSubmit } = props;
+        this.datepickerInput = document.querySelector(input);
 
-    if (!(timeDatepickerInput && theDatepickerInput)) {
-        return;
+        if (!this.datepickerInput) {
+            return null;
+        }
+
+        this.datepicker = new SimplePicker(el, options);
+
+        this.datepickerInput.addEventListener('focus', () => {
+            this.datepicker.open();
+        });
+
+        this.datepicker.on('submit', (timeValue => {
+            if (options?.disableTimeSection) {
+                this.datepickerInput.value = timeValue.toLocaleDateString();
+            } else {
+                this.datepickerInput.value = timeValue.toLocaleString();
+            }
+            onSubmit(timeValue);
+        }));
     }
-
-    const timeDatepicker = new SimplePicker('.timeDatepicker'),
-        theDatepicker = new SimplePicker('.theDatepicker', {disableTimeSection: true});
-
-    timeDatepickerInput.addEventListener('focus', () => {
-        timeDatepicker.open();
-    });
-
-    timeDatepicker.on('submit', (timeValue => {
-        timeDatepickerInput.value = timeValue.toLocaleString();
-    }));
-    
-    theDatepickerInput.addEventListener('focus', () => {
-        theDatepicker.open();
-    });
-
-    theDatepicker.on('submit', (dateValue => {
-        theDatepickerInput.value = dateValue.toLocaleDateString();
-    }));
 }
 
-export { datepickers };
+export { Datepicker };
 

@@ -1,17 +1,13 @@
 import './scss/main.scss';
-//Подключаем наш модуль с функцией которая запускает наши датапикеры
-//import { datepickers } from './js/components/datepickers';
-//Импортируем стили из node_modules Для наших датапикеров
+import { datepickers } from './js/components/datepickers';
 import 'simplepicker/dist/simplepicker.css';
 import { labels } from './js/components/labels';
 
 
-window.addEventListener('DOMContentLoaded', () => {
-    //Запускаем наш собственный модуль с нашими датапикерами
-    //datepickers();
+window.addEventListener('DOMContentLoaded', () => {    
+    datepickers();
     labels();
-    //Забрать id метки
-    document.querySelector('button').addEventListener('click', () => console.log(document.querySelector('.select__input').dataset.value));
-    // Все импортированные скрипты применять здесь
+    
+    document.querySelector('button').addEventListener('click', () => console.log(document.querySelector('.select__input').dataset.value));    
 });
 

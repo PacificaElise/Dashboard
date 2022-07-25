@@ -1,0 +1,74 @@
+.nav {
+    width: 240px;
+    height: 100vh;
+    background-color: $base-light;
+
+    &__title {
+        margin-top: 24px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    nav {
+        margin-top: 53px;
+
+        .nav-item {
+            position: relative;
+
+            a {
+                padding-left: 34px;
+                text-decoration: none;
+                color: $text-color;
+                display: flex;
+                align-items: center;
+            }
+
+            &:hover {
+                a {
+                    color: $accent;
+                }
+
+                svg {
+                    path {
+                        fill: $accent;
+                    }
+                }
+            }
+
+            &.current {
+                svg {
+                    path {
+                        fill: $accent;
+                    }
+                }
+
+                a {
+                    color: $accent;
+                }
+
+                .nav-item__label {
+                    display: block;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+
+            &__icon {
+                margin-right: 12px;
+            }
+
+            &__label {
+                position: absolute;
+                height: 30px;
+                width: 4px;
+                background-color: $accent;
+                right: 0;
+                top: -4px;
+                display: none;
+            }
+        }
+    }
+}

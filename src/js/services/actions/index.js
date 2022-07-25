@@ -7,12 +7,18 @@ class EventActions {
 
     static async getDayList(){
        //реагирует на событие change
-        send({method: 'GET', data, url});
+        send({
+            method: 'GET',
+            data: {
+                completeDate
+            },
+            url
+        });
 
     }
 
     static async update(){
-        send({method: 'GET', data, url});
+        send({method: 'GET', data, url}); //тоже указать день
         rebuildList();
     }
 }

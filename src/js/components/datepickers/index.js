@@ -1,14 +1,15 @@
 import SimplePicker from "simplepicker"; 
 
 function datepickers() {
-    const timeDatepicker = new SimplePicker('.timeDatepicker'),
-        timeDatepickerInput = document.querySelector('.timeDatepicker__input'), 
-        theDatepicker = new SimplePicker('.theDatepicker', {disableTimeSection: true}),
+    const timeDatepickerInput = document.querySelector('.timeDatepicker__input'),
         theDatepickerInput = document.querySelector('.theDatepicker__input');
 
-    if (!(timeDatepicker && timeDatepickerInput)) {
+    if (!(timeDatepickerInput && theDatepickerInput)) {
         return;
     }
+
+    const timeDatepicker = new SimplePicker('.timeDatepicker'),
+        theDatepicker = new SimplePicker('.theDatepicker', {disableTimeSection: true});
 
     timeDatepickerInput.addEventListener('focus', () => {
         timeDatepicker.open();

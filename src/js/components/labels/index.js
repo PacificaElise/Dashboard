@@ -42,12 +42,20 @@ class Select {
     }
 
     #render() {
+        if (!this.el) {
+            return;
+        }
+
         const {placeholder, data} = this.options;
         this.el.classList.add('select');
         this.el.innerHTML = getTemplate(data, placeholder, this.selectedID)
     }
     
     #setup() {
+        if (!this.el) {
+            return;
+        }
+
         this.clickHandler = this.clickHandler.bind(this);
         this.el.addEventListener('click', this.clickHandler);
         this.arrow = this.el.querySelector('[data-type="arrow"]');

@@ -18,7 +18,7 @@ h2 {
     margin-bottom: 8px;
 }
 
-button {
+.button {
     @include button;
     cursor: pointer;
     min-height: 30px;

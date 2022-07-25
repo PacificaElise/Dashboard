@@ -31,6 +31,9 @@
 ├── package-lock.json
 └── index.js
  ```
+ 
+## Документация по API
+http://dashboard.ri-nelly.ru/api
 
 ### Стили
 * В названии файлов **scss** которые не **main.scss** нужно ставить нижнее подчеркивание: **_base.scss**

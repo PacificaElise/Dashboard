@@ -1,4 +1,10 @@
-//import { ApiService } from './js/services/api';
+/*import ApiService from "./js/services/api";
+
+new ApiService.send({
+    url: 'event',
+    method: 'GET',
+}).then(res => console.log(res))*/
+
 function getClosestEvents() {
 
 

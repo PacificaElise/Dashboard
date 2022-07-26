@@ -1,7 +1,10 @@
+
 .wrapper {
-    margin: 0 auto;
-    width: 80%;
-    max-height: 80%;
+    width: calc(100% - 240px);
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+    flex-direction: column;
 }
 
 .new-event {
@@ -10,7 +13,6 @@
     flex-direction: column;
     padding: 20px;
     border-radius: 4px;
-    margin: 30px;
 }
 
 h2 {
@@ -47,6 +49,10 @@ textarea {
     align-items: flex-end;
 }
 
+.business-today_select-date {
+    margin-bottom: 16px;
+}
+
 select {
     min-width: 180px;
     min-height: 30px;
@@ -54,3 +60,18 @@ select {
     border-radius: 4px;
     margin-top: 8px;
 }
+
+input{
+    min-width: 167px;
+    min-height: 26px;
+    border: 1px solid #DFE1E5;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.nameDatepicker{
+    margin-left: 20px;
+}
+

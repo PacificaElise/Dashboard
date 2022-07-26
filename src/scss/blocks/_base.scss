@@ -3,7 +3,7 @@ body { font-family: 'Roboto', sans-serif; }
 
 .container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 100vh;
     grid-gap: 10px;
     align-items: center;
@@ -43,6 +43,7 @@ body { font-family: 'Roboto', sans-serif; }
 }
 
 .closest-event {
+    position: relative;
     display: grid;
     grid-template-rows: 1fr 3fr;
     grid-gap: 10px;
@@ -58,18 +59,13 @@ body { font-family: 'Roboto', sans-serif; }
 .date {
     color: $accent;
 }
-
-
-
-
-
-
-
-/*.label {
+.label {
     position: absolute;
     background-color:#ffff;
     width: 14px;
     height: 14px;
     border-radius: 14px;
-    z-index: 10;
-}*/
+    background: $main-red;
+    bottom: 15%;
+    right: -3%;
+}

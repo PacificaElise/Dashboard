@@ -2,24 +2,22 @@ let nowDate = new Date(),
     nowDateNumber = nowDate.getDate(),
     nowMonth = nowDate.getMonth(),
     nowYear = nowDate.getFullYear(),
-    container = document.getElementById('month-calendar'),
-    monthContainer = container.getElementsByClassName('month-name')[0],
-    yearContainer = container.getElementsByClassName('year-name')[0],
-    daysContainer = container.getElementsByClassName('days')[0],
+    monthBox = document.querySelector('.month-name'),
+    daysBox = document.querySelector('.days'),
     monthName = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 
 
 
 let curDate = nowDate.setMonth(nowDate.getMonth() - 1);
-console.log(nowDate.getFullYear());
+// console.log(nowDate.getFullYear());
 
 function setMonthCalendar(year, month) {
     let monthDays = new Date(year, month + 1, 0).getDate(),
         monthPrefix = new Date(year, month, 0).getDay(),
         monthDaysText = '';
 
-    monthContainer.textContent = monthName[month];
-    daysContainer.innerHTML = '';
+    monthBox.textContent = monthName[month];
+    daysBox.innerHTML = '';
 
     if (monthPrefix > 0) {
         for (let i = 1; i <= monthPrefix; i++) {
@@ -31,51 +29,36 @@ function setMonthCalendar(year, month) {
         monthDaysText += '<li>' + i + '</li>';
     }
 
-    daysContainer.innerHTML = monthDaysText;
+    daysBox.innerHTML = monthDaysText;
 
     if (month == nowMonth && year == nowYear) {
-        days = daysContainer.getElementsByTagName('li');
+        days = daysBox.getElementsByTagName('li');
         days[monthPrefix + nowDateNumber - 1].classList.add('date-now');
     }
 }
 
 setMonthCalendar(nowYear, nowMonth);
 
-// document.addEventListener('DOMContentLoaded', function (event) {
-//     getMark()
-// });
+document.addEventListener('DOMContentLoaded', function (event) {
+    getMark()
+});
 
-// function getMark() {
-//     fetch('dashboard.ri-nelly.ru/api/event')
-//         .then(response => response.json())
-//         .then(user => {
-//             console.log(user);
-//             // document.querySelector('h2').innerText = user.title;
-//             // document.querySelector('#pic').src = user.url;
-//             // document.querySelector('.days li.date-now').innerText = user.explanation;
-//         })
-//     .catch(error => console.log(error));
+function getMark() {
+    ApiService.send({markId: 1})
+    // fetch('dashboard.ri-nelly.ru/api/event?markId=1')
+    //     .then(response => JSON.parse(response.json()))
+    //     .then(mark => {
+    //         console.log(mark);
+    //         // document.querySelector('.days li').innerHTML = mark.data;
+    //     })
+    //     .catch(error => console.log(error));
 
-// }
+    // if (markId) {
+    //     for (let i = 1; i <= monthDays; i++) {
+    //         monthDaysText += '<li>' + '<div class="mark"></div>' +
+    //             i + '</li>';
+    //     }
+    // }
 
-// prev.onclick = function () {
-//     let curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
+}
 
-//     curDate.setMonth(curDate.getMonth() - 1);
-
-//     let curYear = curDate.getFullYear(),
-//         curMonth = curDate.getMonth();
-
-//     setMonthCalendar(curYear,curMonth);
-// }
-
-// next.onclick = function () {
-//     let curDate = new Date(yearContainer.textContent,monthName.indexOf(monthContainer.textContent));
-
-//     curDate.setMonth(curDate.getMonth() + 1);
-
-//     let curYear = curDate.getFullYear(),
-//         curMonth = curDate.getMonth();
-
-//     setMonthCalendar(curYear,curMonth);
-// }

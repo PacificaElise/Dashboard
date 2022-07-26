@@ -2,7 +2,74 @@ body { font-family: 'Roboto', sans-serif; }
 
 
 .container{
-    display: flex;
-    background-color: $base-middle;
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100vh;
+    grid-gap: 10px;
+    align-items: center;
+    background: $base-middle;
 }
+
+.nav {
+    background: $base-light;
+    height: auto;
+    align-self: stretch;
+}
+
+.wrap {
+    background: $base-middle;
+    height: auto;
+    align-self: stretch;
+}
+
+.aside {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background: $base-middle;
+    height: auto;
+    align-self: stretch;
+    grid-gap: 10px;
+    padding: 1.5em 3em 1.5em 1.5em;
+}
+
+.close-events-cards {
+    display: grid;
+    grid-template-rows: 0.1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    font-family: $base-font;
+    color: $text-color;
+    font-size: $event-plans;
+    grid-gap: 20px;
+}
+
+.closest-event {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-gap: 10px;
+    background: $base-light;
+    padding: .5rem;
+}
+
+.content {
+    width: 150px;
+    height: 50px;
+}
+
+.date {
+    color: $accent;
+}
+
+
+
+
+
+
+
+/*.label {
+    position: absolute;
+    background-color:#ffff;
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    z-index: 10;
+}*/

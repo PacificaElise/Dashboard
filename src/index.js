@@ -4,7 +4,7 @@ import 'simplepicker/dist/simplepicker.css';
 import {labels} from './js/components/labels';
 import {navigations} from './js/components/nav';
 import ApiService from "./js/services/api";
-import { getClosestEvents } from './js/components/close-events-cards';
+//import { getClosestEvents } from './js/components/close-events-cards';
 
 window.addEventListener('DOMContentLoaded', () => {
     // Datepicker для создания событий
@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     labels();
     navigations();
-    getClosestEvents();
+    //getClosestEvents();
 
     // Передать id выбранной метки
     //document.querySelector('button').addEventListener('click', () => console.log(document.querySelector('.select__input').dataset.value));

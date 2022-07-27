@@ -1,11 +1,11 @@
-/*import ApiService from "./js/services/api";
+import ApiService from "./js/services/api";
 
 new ApiService.send({
     url: 'event',
     method: 'GET',
-}).then(res => console.log(res))*/
+}).then(res => console.log(res));
 
-function getClosestEvents() {
+/*function getClosestEvents() {
 
 
 async function getResponse() {
@@ -29,4 +29,4 @@ async function getResponse() {
 getResponse()
 }
 
-export { getClosestEvents };
+export { getClosestEvents };*/

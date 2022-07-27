@@ -4,6 +4,7 @@ import 'simplepicker/dist/simplepicker.css';
 import {labels} from './js/components/labels';
 import {navigations} from './js/components/nav';
 import ApiService from "./js/services/api";
+import EventActions from "./js/services/actions"
 
 window.addEventListener('DOMContentLoaded', () => {
     // Datepicker для создания событий
@@ -23,14 +24,16 @@ window.addEventListener('DOMContentLoaded', () => {
             disableTimeSection: true
         },
         onSubmit: (value) => {
+            EventActions.update()
+
             // Тут должен быть твой метод который будет отображать данные в списке
-            ApiService.send({
-                url: 'event',
-                method: 'GET',
-                data: {
-                    day: value.getTime()
-                }
-            }).then(res => console.log(res))
+            // ApiService.send({
+            //     url: 'event',
+            //     method: 'GET',
+            //     data: {
+            //         day: value.getTime()
+            //     }
+            // }).then(res => console.log(res))
         }
     });
 

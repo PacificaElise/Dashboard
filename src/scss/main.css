@@ -63,12 +63,15 @@ body {
   display: flex;
   background-color: #F1F2F6;
   position: relative;
+  height: 100vh;
 }
 
 .wrapper {
-  margin: 0 auto;
-  width: 80%;
-  max-height: 80%;
+  width: calc(100% - 240px);
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+  flex-direction: column;
 }
 
 .new-event {
@@ -77,7 +80,6 @@ body {
   flex-direction: column;
   padding: 20px;
   border-radius: 4px;
-  margin: 30px;
 }
 
 h2 {
@@ -120,6 +122,10 @@ textarea {
   align-items: flex-end;
 }
 
+.business-today_select-date {
+  margin-bottom: 16px;
+}
+
 select {
   min-width: 180px;
   min-height: 30px;
@@ -128,6 +134,77 @@ select {
   margin-top: 8px;
 }
 
+input {
+  min-width: 167px;
+  min-height: 26px;
+  border: 1px solid #DFE1E5;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.nameDatepicker {
+  margin-left: 20px;
+}
+
+.plans {
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 4px;
+  height: calc(100% - 205px - 70px);
+}
+
+.business-today {
+  height: 100%;
+}
+
+.business-today_list {
+  padding: 20px;
+  border: 3px solid #F1F2F6;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.details_time {
+  margin-right: 20px;
+}
+
+.details_description {
+  width: -webkit-fill-available;
+  border: 1px solid #DFE1E5;
+}
+
+.details-label-string {
+  display: flex;
+  flex-grow: 1;
+}
+
+.det-text-opacity {
+  opacity: 0.5;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-color {
+  background-color: #7BAFFC;
+  margin-right: 20px;
+}
+
+.layer {
+  overflow: auto;
+  height: calc(100% - 100px);
+}
+
 .wrapp {
   min-width: 180px;
   margin-top: 8px;
@@ -208,84 +285,59 @@ select {
   transition: 0.15s background-color ease-in;
 }
 
-.wrapp {
-  min-width: 180px;
-  margin-top: 8px;
+.nav {
+  width: 240px;
+  height: 100vh;
+  background-color: #FFFFFF;
 }
-
-.select {
-  width: 100%;
+.nav__title {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+.nav nav {
+  margin-top: 53px;
+}
+.nav nav .nav-item {
   position: relative;
-  z-index: 100;
 }
-.select.open .select__dropdown {
-  display: block;
-}
-.select.open .select__input {
-  border-bottom: none;
-}
-.select.open .select__backdrop {
-  display: block;
-}
-.select__input {
-  min-height: 28px;
+.nav nav .nav-item a {
+  padding-left: 34px;
+  text-decoration: none;
+  color: #202532;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border: 1px solid #DFE1E5;
-  border-radius: 4px;
-  color: #202532;
-  font-size: 12px;
-  padding: 0 1rem;
-  font-family: "Roboto", sans-serif;
-  cursor: pointer;
 }
-.select__dropdown {
-  max-height: 100px;
-  display: none;
-  position: absolute;
-  border: 1px solid #DFE1E5;
-  border-radius: 4px;
-  font-size: 12px;
-  color: #202532;
-  top: 28px;
-  left: 0;
-  right: 0;
-  overflow: auto;
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+.nav nav .nav-item:hover a {
+  color: #FFA0A3;
 }
-.select__list {
-  background-color: #FFFFFF;
-  padding: 0;
-  margin: 0;
+.nav nav .nav-item:hover svg path {
+  fill: #FFA0A3;
 }
-.select__color {
+.nav nav .nav-item.current svg path {
+  fill: #FFA0A3;
+}
+.nav nav .nav-item.current a {
+  color: #FFA0A3;
+}
+.nav nav .nav-item.current .nav-item__label {
   display: block;
-  width: 14px;
-  height: 14px;
-  border-radius: 14px;
 }
-.select__backdrop {
-  display: none;
-  position: fixed;
-  z-index: -1;
-  top: 0;
+.nav nav .nav-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+.nav nav .nav-item__icon {
+  margin-right: 12px;
+}
+.nav nav .nav-item__label {
+  position: absolute;
+  height: 30px;
+  width: 4px;
+  background-color: #FFA0A3;
   right: 0;
-  bottom: 0;
-  left: 0;
-  background: transparent;
-}
-.select__item {
-  padding: 0.5rem;
-  border-bottom: 1px solid #F1F2F6;
-}
-.select__item.selected {
-  background-color: #F1F2F6;
-}
-.select__item:hover {
-  background-color: #F1F2F6;
-  cursor: pointer;
-  transition: 0.15s background-color ease-in;
+  top: -4px;
+  display: none;
 }
 
 .container {
@@ -293,13 +345,13 @@ select {
   grid-template-columns: 1fr 2fr 1fr;
 }
 
-.wrapper {
+.calendar {
   margin: 30px;
 }
 
 /* месяцы и годы */
 .month-calendar {
-  max-width: 322px;
+  max-width: 310px;
   border-radius: 4px;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.05);
 }

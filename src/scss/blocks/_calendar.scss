@@ -4,13 +4,13 @@
 
 }
 
-.wrapper {
+.calendar {
     margin: 30px;
 }
 
 /* месяцы и годы */
 .month-calendar {
-    max-width: 322px;
+    max-width: 310px;
     border-radius: 4px;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.05);
 
@@ -64,7 +64,7 @@
 
 .mark {
     position: relative;
-    background: $main-red;
+    // background: $main-red;
     border-radius: 50%;
     width: 6.02px;
     height: 6px;

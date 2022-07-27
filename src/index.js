@@ -1,18 +1,44 @@
 import './scss/main.scss';
-import { calendar } from './js/components/calendar';
-//Подключаем наш модуль с функцией которая запускает наши датапикеры
-//import { datepickers } from './js/components/datepickers';
-//Импортируем стили из node_modules Для наших датапикеров
+import {Datepicker} from './js/components/datepickers';
+import {calendar} from './js/components/calendar';
 import 'simplepicker/dist/simplepicker.css';
-import { labels } from './js/components/labels';
-
+import {labels} from './js/components/labels';
+import {navigations} from './js/components/nav';
+import ApiService from "./js/services/api";
 
 window.addEventListener('DOMContentLoaded', () => {
-    //Запускаем наш собственный модуль с нашими датапикерами
-    //datepickers();
+    // Datepicker для создания событий
+    new Datepicker({
+        el: '.timeDatepicker',
+        input: '.timeDatepicker__input',
+        onSubmit: (value) => {
+            console.log(value)
+        }
+    });
+
+    //Datepicker для отображения событий
+    new Datepicker({
+        el: '.theDatepicker',
+        input: '.theDatepicker__input',
+        options: {
+            disableTimeSection: true
+        },
+        onSubmit: (value) => {
+            // Тут должен быть твой метод который будет отображать данные в списке
+            ApiService.send({
+                url: 'event',
+                method: 'GET',
+                data: {
+                    day: value.getTime()
+                }
+            }).then(res => console.log(res))
+        }
+    });
+
     labels();
-    //Забрать id метки
-    document.querySelector('button').addEventListener('click', () => console.log(document.querySelector('.select__input').dataset.value));
-    // Все импортированные скрипты применять здесь
+    navigations();
+
+    // Передать id выбранной метки
+    //document.querySelector('button').addEventListener('click', () => console.log(document.querySelector('.select__input').dataset.value));
 });
 

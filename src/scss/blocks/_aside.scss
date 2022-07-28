@@ -7,9 +7,11 @@
     align-self: stretch;
     grid-gap: 10px;
     padding: 1.5em 3em 1.5em 1.5em;
+    min-width: 240px;
 }
 
 .close-events-cards {
+    width: 100%;
     display: grid;
     grid-template-rows: 0.1fr 1fr 1fr 1fr;
     grid-gap: 5px;
@@ -20,6 +22,7 @@
 }
 
 .closest-event {
+    width: 100%;
     position: relative;
     display: grid;
     grid-template-rows: 1fr 3fr;
@@ -28,21 +31,15 @@
     padding: .5rem;
 }
 
-.content {
-    width: 150px;
-    height: 50px;
-}
 
 .date {
     color: $accent;
 }
 .label {
     position: absolute;
-    background-color:#ffff;
     width: 14px;
     height: 14px;
     border-radius: 14px;
-    background: $main-red;
     bottom: 15%;
     right: -3%;
 }

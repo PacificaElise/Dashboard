@@ -1,10 +1,7 @@
 import ApiService from '../api';
+
+
 class EventActions {
-    static async remove(){
-        ApiService.send({method: 'DELETE', data, url});
-    }
-
-
     static async getDayList(value){
         ApiService.send({
             method: 'GET',
@@ -15,21 +12,18 @@ class EventActions {
         })
         .then(function(resp){
             let tasksArr = resp.data,
-                plansList = document.querySelector('.business-today'),
                 plansContainer = document.querySelector('.plans'),
+                plansList = document.querySelector('.business-today'),
                 box = document.querySelector('.business-today_list')
 
             console.log(tasksArr);
 
             tasksArr.forEach(elem => {
-            
-            console.log(box);
 
             const time = new Date(elem.completeDate);
-            console.log(time.getTime());
 
             let hours, minutes, correctTime;
-            
+
             function formatTime (time){
                 hours = String(time.getHours()).padStart(2,0),
                 minutes = String(time.getMinutes()).padStart(2,0)
@@ -38,8 +32,11 @@ class EventActions {
             }
 
             formatTime(time);
+            
+            const details = document.createElement('div');
+            details.setAttribute('class', 'details');
 
-            box.innerHTML += `<div class="details">
+            details.innerHTML += `
                                 <label class="details_time det-text-opacity">${correctTime}</label>
                                 <div class="details-label-string">
                                     <span class="dot dot-color"></span>
@@ -52,11 +49,24 @@ class EventActions {
                                             d="M1.78125 17.5312L0.46875 16.2187L7.6875 9L0.46875 1.78125L1.78125 0.46875L9 7.6875L16.2187 0.46875L17.5312 1.78125L10.3125 9L17.5312 16.2187L16.2187 17.5312L9 10.3125L1.78125 17.5312Z"
                                             fill="#FD4B33" />
                                 </svg>
-                            </div>
                             </div>`
-            plansList.append(box);
-            plansContainer.append(plansList);
+                box.append(details)
+                plansList.append(box);
+                plansContainer.append(plansList);
             });
+
+            // let deleteBtn = document.querySelectorAll('.pic-close');
+            document.addEventListener('click', (e) => {
+                ApiService.send({
+                    method: 'DELETE', 
+                    data: {
+                        id: tasksArr[0].id
+                    },
+                    url: 'event'
+                })
+                .then(resp => console.log(resp))
+            })
+
         })    
     }
 

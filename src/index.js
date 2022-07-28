@@ -25,22 +25,15 @@ window.addEventListener('DOMContentLoaded', () => {
         },
         onSubmit: (value) => {
             EventActions.getDayList(value)
-
-            // Тут должен быть твой метод который будет отображать данные в списке
-            // ApiService.send({
-            //     url: 'event',
-            //     method: 'GET',
-            //     data: {
-            //         day: value.getTime()
-            //     }
-            // }).then(res => console.log(res))
         }
     });
 
     labels();
     navigations();
-
+    
     // Передать id выбранной метки
     //document.querySelector('button').addEventListener('click', () => console.log(document.querySelector('.select__input').dataset.value));
 });
+
+
 

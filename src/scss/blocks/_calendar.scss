@@ -60,20 +60,24 @@
     color: $text-color;
     font-size: $tag-date-event;
 
+
 }
 
-.mark {
-    position: relative;
-    // background: $main-red;
-    border-radius: 50%;
-    width: 6.02px;
+.important-event::after {
+    content: ' ';
+    display: inline-block;
+    width: 6px;
     height: 6px;
+    position: fixed;
+    border-radius: 50%;
+    background-color: $main-red;
 }
 
 .days li {
     padding: 10px;
     text-align: center;
     line-height: 1rem;
+
 }
 
 .days li.date-now {

@@ -1,4 +1,6 @@
-function calendar() {
+import ApiService from "../../services/api";
+
+function calendar(events) {
     let nowDate = new Date(),
         nowDateNumber = nowDate.getDate(),
         nowMonth = nowDate.getMonth(),
@@ -22,8 +24,13 @@ function calendar() {
         }
 
         for (let i = 1; i <= monthDays; i++) {
-            monthDaysText += '<li>' + i + '</li>';
-        } //'<div class="mark"></div>'
+            const currentEvent = events.find(event => {
+                const date = new Date(event.completeDate);
+                return date.getMonth() === nowMonth && date.getDate() === i;
+            })
+
+            monthDaysText += `<li class=${currentEvent ? 'important-event' : '' }>` + i + `</li>`;
+        } 
 
         daysBox.innerHTML = monthDaysText;
 
@@ -34,19 +41,11 @@ function calendar() {
     }
 
     getCalendar(nowYear, nowMonth)
+    
 }
 
-document.addEventListener('DOMContentLoaded', function (event) {
-    calendar()
-});
 
-
-
-
-import ApiService from "../../services/api";
-
-
-function getMark() {
+function BuildCalendar() {
     let res = ApiService.send({
         url: 'event',
         method: 'GET',
@@ -54,27 +53,12 @@ function getMark() {
             markId: 1
         }
     }).then(res => {
-        console.log(res);
-        for (let i = 0; i < res.data.length; i++) {
-            if (res.data[i].mark !== null) {
-                let marks = res.data[i].completeDate;
-                console.log("marks", marks);
-
-
-            }
-        }
-
+        calendar(res.data);
     })
 }
 
 
 
-document.addEventListener('DOMContentLoaded', function (event) {
-    getMark()
-});
-
-
 export {
-    calendar
+    BuildCalendar
 }
-// export { getMark}

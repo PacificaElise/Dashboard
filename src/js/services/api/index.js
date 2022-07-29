@@ -1,3 +1,4 @@
+import EventActions from '../actions'
 class ApiService {
     static async send(params) {
         const {method = 'GET', data, url} = params,
@@ -6,7 +7,7 @@ class ApiService {
         let encodeStr = '';
 
         //получаем данные с сервера
-        if(method === 'GET' && data){
+        if(method !== 'POST' && data){
             let values = [];
             for(let key in data){
                 values.push(`${key}=${encodeURI(data[key])}`); //кодирование русских букв
@@ -19,7 +20,7 @@ class ApiService {
         let requestData;
 
         //отправляем данные на сервер
-        if(method !== 'GET'){
+        if(method === 'POST'){
             requestData = JSON.stringify(data)
         }
 

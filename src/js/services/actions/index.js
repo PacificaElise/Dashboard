@@ -1,13 +1,11 @@
-import ApiService from '../api';
-
-
+import ApiService from "../api";
 class EventActions {
-    static async remove(idValue){
-        console.log(idValue);
+    static async remove(id){
+        console.log(id);
         ApiService.send({
             method: 'DELETE', 
             data: {
-                id: idValue
+                id
             },
             url: 'event'
         })
@@ -15,6 +13,7 @@ class EventActions {
     }
     
     static async getDayList(value){
+        console.log(value);
         ApiService.send({
             method: 'GET',
             data: {
@@ -33,7 +32,6 @@ class EventActions {
             tasksArr.forEach(elem => {
 
                 const time = new Date(elem.completeDate);
-
                 let hours, minutes, correctTime;
 
                 function formatTime (time){
@@ -54,14 +52,14 @@ class EventActions {
                                     <span class="dot dot-color"></span>
                                     <p class="det-text-opacity">${elem.text}</p>
                                 </div>
-                                
-                                <svg class="pic-close" data-id=${elem.id} width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                <div class="pic-close" data-id=${elem.id}>
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
                                             d="M1.78125 17.5312L0.46875 16.2187L7.6875 9L0.46875 1.78125L1.78125 0.46875L9 7.6875L16.2187 0.46875L17.5312 1.78125L10.3125 9L17.5312 16.2187L16.2187 17.5312L9 10.3125L1.78125 17.5312Z"
                                             fill="#FD4B33" />
                                 </svg>
-                            `
+                                </div>`
                 box.append(details)
                 plansList.append(box);
                 plansContainer.append(plansList);
@@ -72,13 +70,13 @@ class EventActions {
             deleteBtn.forEach(item => {
                 item.addEventListener('click', (e) => {
                     let target = e.currentTarget
-                    let idValue = target.getAttribute('data-id')
-                    console.log(idValue);
-                    EventActions.remove(idValue)
+                    let id = target.getAttribute('data-id')
+                    console.log(id);
+                    EventActions.remove(id)
                 })
             })
-            })
-        }
+        })
+    }
 }
 
     // static async update(){

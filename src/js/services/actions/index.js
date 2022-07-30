@@ -77,14 +77,18 @@ class EventActions {
             })
         })
     }
-}
 
     // static async update(){
-    //     // send({method: 'GET', data, url});
-
-    //     getDayList(); //получаем данные по выбранной дате
-    //     rebuildList();     //обновляем верстку
+    //     ApiService.send({
+    //         method: 'GET',
+    //         data: 
+    //         url: 'event'
+    //     })
+    //     .then(setTimeout(location.reload(), 1000))
     // }
+}
+
+    
 
 
 

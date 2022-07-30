@@ -1,5 +1,6 @@
 import './scss/main.scss';
 import {Datepicker} from './js/components/datepickers';
+import {BuildCalendar} from './js/components/calendar';
 import 'simplepicker/dist/simplepicker.css';
 import {labels} from './js/components/labels';
 import {navigations} from './js/components/nav';
@@ -40,7 +41,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     labels();
     navigations();
+
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html'){
     getClosestEvents();
+    BuildCalendar();
+    }
 
     const saveTodo = document.querySelector('#todoSave'),
         todoTextArea = document.querySelector('.todoTextArea'),
@@ -66,8 +71,5 @@ window.addEventListener('DOMContentLoaded', () => {
                 })
         });
     }
-
-    // Передать id выбранной метки
-    //document.querySelector('button').addEventListener('click', () => console.log(document.querySelector('.select__input').dataset.value));
 });
 

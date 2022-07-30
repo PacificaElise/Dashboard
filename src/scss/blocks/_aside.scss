@@ -1,20 +1,17 @@
 .aside {
+    width: 100%;
+    height: auto;
     color: $text-color;
     display: grid;
     grid-template-rows: 1fr 1fr;
     background: $base-middle;
-    height: auto;
     align-self: stretch;
-    grid-gap: 10px;
-    padding: 1.5em 3em 1.5em 1.5em;
-    max-width: 240px;
 }
 
 .close-events-cards {
-    width: 100%;
+    margin: 0px 40px 10px 20px;
     display: grid;
     grid-template-rows: 0.1fr 1fr 1fr 1fr;
-    grid-gap: 5px;
     font-family: $base-font;
     color: $text-color;
     font-size: $event-plans;
@@ -22,19 +19,24 @@
 }
 
 .closest-event {
-
     width: 100%;
     height: 80px;
     position: relative;
-    display: grid;
-    grid-template-rows: 1fr 3fr;
     grid-gap: 10px;
     background: $base-light;
     padding: .5rem;
 }
 
+.content {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
 .date {
     color: $accent;
+    margin-bottom: 10px;
 }
 
 .label {

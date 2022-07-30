@@ -1,5 +1,6 @@
 import './scss/main.scss';
 import {Datepicker} from './js/components/datepickers';
+import {BuildCalendar} from './js/components/calendar';
 import 'simplepicker/dist/simplepicker.css';
 import {labels} from './js/components/labels';
 import {navigations} from './js/components/nav';
@@ -38,6 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     labels();
     navigations();
+    BuildCalendar();
 
     const saveTodo = document.querySelector('#todoSave'),
         todoTextArea = document.querySelector('.todoTextArea'),

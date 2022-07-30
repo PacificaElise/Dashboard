@@ -23,13 +23,12 @@ class ApiService {
             requestData = JSON.stringify(data)
         }
 
-
         const response = await fetch(`http://${host}/${url}${encodeStr}`, {
             headers: {
-                'Content-type': 'json/application'
+                'Content-type': 'application/json'
             },
             method,
-            data: requestData
+            body: requestData
         })
         .catch(e => {
             if (!e.response) {

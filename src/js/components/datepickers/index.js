@@ -24,6 +24,11 @@ class Datepicker {
             onSubmit(timeValue);
         }));
     }
+
+    reset() {
+        this.datepicker.reset();
+        this.datepickerInput.value = '';
+    }
 }
 
 export { Datepicker };

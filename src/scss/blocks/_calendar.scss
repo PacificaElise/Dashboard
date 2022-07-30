@@ -1,6 +1,7 @@
-.container {
+.container_for_index {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 240px 3fr 1fr;
+    background-color: $base-middle;
 }
 
 .calendar {

@@ -22,6 +22,7 @@ class ApiService {
         //отправляем данные на сервер
         if(method !== 'GET'){
             requestData = JSON.stringify(data)
+            console.log(requestData);
         }
 
 

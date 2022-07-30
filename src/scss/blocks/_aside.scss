@@ -20,16 +20,17 @@
 
 .closest-event {
     width: 100%;
-    height: 80px;
+    height: 100px;
     position: relative;
     grid-gap: 10px;
     background: $base-light;
     padding: .5rem;
+    border-radius: 3px;
 }
 
 .content {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;  
     overflow: hidden;
 }

@@ -35,9 +35,6 @@ new ApiService.send({
     labels = document.querySelector(`[data-id="${item.id}"]`);
     console.log(labels.dataset.id)   
     });
-
-
-
     })
 }
 

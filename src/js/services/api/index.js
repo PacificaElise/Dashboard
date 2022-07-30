@@ -7,7 +7,7 @@ class ApiService {
         let encodeStr = '';
 
         //получаем данные с сервера
-        if(method !== 'POST' && data){
+        if(method === 'GET' && data){
             let values = [];
             for(let key in data){
                 values.push(`${key}=${encodeURI(data[key])}`); //кодирование русских букв
@@ -20,7 +20,7 @@ class ApiService {
         let requestData;
 
         //отправляем данные на сервер
-        if(method === 'POST'){
+        if(method !== 'GET'){
             requestData = JSON.stringify(data)
         }
 

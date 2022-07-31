@@ -1,15 +1,15 @@
 import ApiService from "../api";
 class EventActions {
-    static async remove(id){
-        console.log(id);
+    static async remove(id, value){
         ApiService.send({
             method: 'DELETE', 
             data: {
-                id
+                id,
+                day: value
             },
             url: 'event'
         })
-        .then(resp => console.log(resp))
+        .then(() => {this.getDayList(value)})
     }
     
     static async getDayList(value){
@@ -25,9 +25,10 @@ class EventActions {
             let tasksArr = resp.data,
                 plansContainer = document.querySelector('.plans'),
                 plansList = document.querySelector('.business-today'),
-                box = document.querySelector('.business-today_list')
+                box = document.querySelector('.business-today_list');
+            box.innerHTML = ''
 
-            console.log(tasksArr);
+            // console.log(tasksArr);
 
             tasksArr.forEach(elem => {
 
@@ -66,32 +67,18 @@ class EventActions {
             });
 
             const deleteBtn = document.querySelectorAll('.pic-close');
-
+        
+            
             deleteBtn.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    let target = e.currentTarget
-                    let id = target.getAttribute('data-id')
-                    console.log(id);
-                    EventActions.remove(id)
+            item.addEventListener('click', (e) => {
+                let target = e.currentTarget
+                let id = target.getAttribute('data-id')
+                EventActions.remove(id, value)
                 })
             })
         })
     }
-
-    // static async update(){
-    //     ApiService.send({
-    //         method: 'GET',
-    //         data: 
-    //         url: 'event'
-    //     })
-    //     .then(setTimeout(location.reload(), 1000))
-    // }
 }
-
-    
-
-
-
 
 
 export default EventActions;

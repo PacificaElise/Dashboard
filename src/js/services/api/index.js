@@ -25,7 +25,6 @@ class ApiService {
             console.log(requestData);
         }
 
-
         const response = await fetch(`http://${host}/${url}${encodeStr}`, {
             headers: {
                 'Content-type': 'application/json'

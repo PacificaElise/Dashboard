@@ -1,10 +1,7 @@
-
-.wrapper {
-    width: calc(100% - 240px);
-    display: flex;
-    padding: 30px;
-    gap: 30px;
-    flex-direction: column;
+.todo-page {
+    .wrapper {
+        flex-direction: column;
+    }
 }
 
 .new-event {

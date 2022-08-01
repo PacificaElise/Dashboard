@@ -5,6 +5,12 @@ body { font-family: 'Roboto', sans-serif; }
     display: flex;
     background-color: $base-middle;
     position: relative;
+}
+
+.wrapper {
+    width: calc(100% - 240px);
+    display: flex;
+    padding: 30px;
+    gap: 30px;
     height: 100vh;
-    justify-content: space-between;
 }

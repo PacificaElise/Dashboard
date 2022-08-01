@@ -15,13 +15,9 @@ new ApiService.send({
         item.completeDate = new Date(item.completeDate).toLocaleString()
     });
     let result = notExpired.sort().splice(0,3);
-    console.log(result)
 
-    let withColor = result.filter(color => !!color.mark)
-    console.log(withColor)
-
+    
     const closestEvents = document.querySelector('.close-events-cards');
-    let cards;
 
     result.forEach (item => {
         closestEvents.innerHTML += `<div class="closest-event">

@@ -7,3 +7,10 @@ body { font-family: 'Roboto', sans-serif; }
     position: relative;
     height: 100vh;
 }
+
+.wrapper {
+    width: calc(100% - 240px);
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}

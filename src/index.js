@@ -33,7 +33,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     labels();
     navigations();
-    BuildCalendar();
+
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        BuildCalendar();
+    }
 
     const saveTodo = document.querySelector('#todoSave'),
         todoTextArea = document.querySelector('.todoTextArea'),

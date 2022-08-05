@@ -9,6 +9,9 @@ import { Todo } from './js/components/todo';
 import EventActions from "./js/services/actions";
 
 window.addEventListener('DOMContentLoaded', () => {
+    
+
+
     let todoDate = 0;
     // Datepicker для создания событий
     const timePickerObj = new Datepicker({
@@ -19,12 +22,15 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    let todayDate = new Date();
+    EventActions.getDayList(todayDate)
+    
     //Datepicker для отображения событий
-    new Datepicker({
+    let sp = new Datepicker({
         el: '.theDatepicker',
         input: '.theDatepicker__input',
         options: {
-            disableTimeSection: true
+            disableTimeSection: true,
         },
         onSubmit: (value) => {
             EventActions.getDayList(value)

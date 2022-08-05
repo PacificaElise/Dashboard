@@ -67,6 +67,8 @@ class EventActions {
             });
 
             const deleteBtn = document.querySelectorAll('.pic-close');
+
+            // Todo.create(value)
         
             
             deleteBtn.forEach(item => {

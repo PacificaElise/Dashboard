@@ -13,7 +13,6 @@ class EventActions {
     }
     
     static async getDayList(value){
-        console.log(value);
         ApiService.send({
             method: 'GET',
             data: {
@@ -27,8 +26,6 @@ class EventActions {
                 plansList = document.querySelector('.business-today'),
                 box = document.querySelector('.business-today_list');
             box.innerHTML = ''
-
-            // console.log(tasksArr);
 
             tasksArr.forEach(elem => {
 

@@ -1,3 +1,4 @@
+import EventActions from '../actions'
 class ApiService {
     static async send(params) {
         const {method = 'GET', data, url} = params,

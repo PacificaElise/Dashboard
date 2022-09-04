@@ -1,0 +1,61 @@
+.aside {
+    width: 322px;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    background: $base-middle;
+    align-self: stretch;
+}
+
+.close-events-cards {
+    height: calc(100% - 374px); 
+    width: 322px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    font-family: $base-font;
+    color: $text-color;
+    font-size: $event-plans;
+    gap: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &__title {
+        font-weight: 500;
+        color: $text-color;
+    }
+}
+
+.closest-event {
+    height: auto;
+    width: 100%;
+    margin-right: 6px;
+    position: relative;
+    background: $base-light;
+    padding: 20px;
+    border-radius: 3px;
+    line-height: 14px
+}
+
+
+
+.content {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.date {
+    color: $accent;
+    margin-bottom: 10px;
+}
+
+.label {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 14px;
+    bottom: 28px;
+    right: -6px;
+}

@@ -33,7 +33,7 @@
  ```
  
 ## Документация по API
-http://dashboard.ri-nelly.ru/api
+http://dashboard.ri-nelly.ru:4000/api
 
 ### Стили
 * В названии файлов **scss** которые не **main.scss** нужно ставить нижнее подчеркивание: **_base.scss**

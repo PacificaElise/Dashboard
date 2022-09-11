@@ -12,10 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
     labels();
     navigations();
 
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-        getClosestEvents();
-        BuildCalendar();
-    }
+    getClosestEvents();
+    BuildCalendar();
 });
 
 

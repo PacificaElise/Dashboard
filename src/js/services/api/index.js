@@ -1,7 +1,7 @@
 class ApiService {
     static async send(params) {
         const {method = 'GET', data, url} = params,
-        host = 'dashboard.ri-nelly.ru/api';
+        host = 'dashboard.ri-nelly.ru:4000/api';
 
         let encodeStr = '';
 

@@ -4,7 +4,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+        todo: './src/todo.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
@@ -54,11 +57,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: './index.html',
-            template: './src/html/index.html'
+            template: './src/html/index.html',
+            chunks: ['index']
         }),
         new HtmlWebpackPlugin({
             filename: './todo.html',
-            template: './src/html/todo.html'
+            template: './src/html/todo.html',
+            chunks: ['todo']
         }),
         new MiniCssExtractPlugin({
             filename: './assets/styles/[name].[contenthash].css'
